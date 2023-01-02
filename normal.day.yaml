@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>Lost?</title>
+    <style>
+        @font-face {
+            font-family: 'FiraGO';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/themes/custom/here_dev_portal_theme/fonts/firaGo-subset/subset-FiraGO-Book.eot');
+            src: local('FiraGO Book'), local('FiraGO-Book'),
+            url('/themes/custom/here_dev_portal_theme/fonts/firaGo-subset/subset-FiraGO-Book.woff2') format('woff2'),
+            url('/themes/custom/here_dev_portal_theme/fonts/firaGo-subset/subset-FiraGO-Book.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'FiraGO';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url('/themes/custom/here_dev_portal_theme/fonts/firaGo-subset/subset-FiraGO-Medium.eot');
+            src: local('FiraGO Medium'), local('FiraGO-Medium'),
+            url('/themes/custom/here_dev_portal_theme/fonts/firaGo-subset/subset-FiraGO-Medium.woff2') format('woff2'),
+            url('/themes/custom/here_dev_portal_theme/fonts/firaGo-subset/subset-FiraGO-Medium.woff') format('woff');
+        }
+        body {
+            height: 100%;
+            font-family: "FiraGO","Tahoma","Calibri","Helvetica","Arial",sans-serif;
+            min-height: 510px;
+            margin: 0 20px;
+            line-height: 18px;
+        }
+        a:link {
+            color: #77a0e7;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #77a0e7;
+            text-decoration: none;
+        }
+        a:active {
+            color: #00aad9;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #00b4e5;
+            text-decoration: underline;
+        }
+        .header {
+            padding-top: 30px;
+        }
+        .header img {
+            height: 36px;
+            width: 36px;
+        }
+        .header p {
+            font-size: 22px;
+        }
+        .left_column {
+            float: left;
+            position: absolute;
+            left:0;
+            background-image: url("/images/layout/logos/here_grey.svg");
+            margin: 10px;
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            width: 50px;
+            height: 50px;
+        }
+        .error_body {
+            float: left;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: auto;
+        }
+        .error_body div {
+            margin: auto;
+        }
+        .content {
+            padding-top: 35px;
+        }
+        .content div {
+            margin: auto;
+        }
+        .content .first_line {
+            font-size: 16px;
+            padding-bottom: 10px;
+        }
+        .content .explanation {
+            font-size: 14px;
+            color: #666666;
+            padding-bottom: 38px;
+        }
+        .content .call_to_action {
+            font-size: 14px;
+            padding-top: 22px;
+            padding-bottom: 15px;
+            color: #666666;
+        }
+        .call_to_action a,
+        .call_to_action button {
+            position: relative;
+            display: inline-block;
+            padding: 15px 41px;
+            border: none;
+            text-decoration: none;
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: .5px;
+            -webkit-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+
+            text-align: center;
+            max-width: 256px;
+
+            color: #3f454d;
+            position: relative;
+            width: 100%;
+            min-width: 180px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-align: center;
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+
+            margin: 10px auto;
+        }
+
+        .call_to_action a::before,
+        .call_to_action button::before {
+            background: linear-gradient(278deg,#61d8d6,#8ba2ed);
+            z-index: 1;
+            opacity: 1;
+            -webkit-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+        }
+
+        .call_to_action a span,
+        .call_to_action button span {
+            position: relative;
+            z-index: 3;
+        }
+
+        .call_to_action a::after,
+        .call_to_action button::after {
+            background: #9cbffb;
+            z-index: 2;
+            opacity: 0;
+            -webkit-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+        }
+
+        .call_to_action a:hover::after,
+        .call_to_action button:hover::after {
+            opacity: 1;
+        }
+
+        .horizontal_line {
+            height: 1px;
+            border-top: 1px solid #d9d9d9;
+            max-width: 600px;
+            width: 100%;
+        }
+        .horizontal_line {
+            max-width: 480px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="left_column"></div>
+<div class="error_body">
+    <div class="header not_found">
+        <div>
+            <img src="/images/dp-icons/search-grey.svg" alt="" />
+        </div>
+        <p>404 Not Found.</p>
+    </div>
+    <div class="horizontal_line"></div>
+    <div class="content">
+        <div class="first_line">Sorry, we can't find the page you're looking for.</div>
+        <div class="horizontal_line"></div>
+        <div class="call_to_action">Go to <br><a href="https://developer.here.com"><span>HERE Developer Portal</span></a></div>
+    </div>
+</div>
+</body>
+
+</html>
